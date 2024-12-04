@@ -20,3 +20,12 @@ Complexity O(n), just looping over all numbers, slight optimization by breaking 
 
 #### part 2
 This is also O(n), we just do two loops, one for decrements, one for increments and some extra ops to determine how to continue.
+
+
+### Day 3
+
+O(n)..
+
+### Day 4
+
+O(n*m)..
