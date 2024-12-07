@@ -1,8 +1,6 @@
-from xml.sax.saxutils import escape
-
 obstacles = set()
 visited = set()
-guard = [0, 0]
+guard = (0, 0)
 n = m = 0
 d = -1
 dirs = [[0,-1], [1,0], [0,1], [-1,0]] # directions: U, R, D, L
@@ -31,6 +29,6 @@ while True:
         continue
 
     guard = new_guard_pos
-    visited.add((guard[0],guard[1]))
+    visited.add(guard)
 
 print(len(visited))
