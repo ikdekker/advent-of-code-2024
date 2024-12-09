@@ -18,7 +18,6 @@ def check_corners(grid, x, y, m, n, direction = None):
 grid = []
 with open("inputs/4.txt") as file:
     for line in file:
-        row = []
         grid.append(list(line.strip()))
 # M x N grid
 m = len(grid[0])

@@ -1,6 +1,5 @@
 nodes_placed = n = m = 0
 obs = {}
-all_ants={}
 def is_in_bounds(x, y):
     global m,n
     return 0 <= x < m and 0 <= y < n
@@ -14,7 +13,6 @@ with open("inputs/8.txt") as file:
             n = x + 1
             if c != ".":
                 obs[c] = obs.get(c, []) + [(x,y)]
-                all_ants[((x,y))] = c
                 outx[y].append("📡")
             else:
                 outx[y].append('⏹️')

@@ -14,7 +14,9 @@ with open("inputs/8.txt") as file:
             n = x + 1
             if c != ".":
                 obs[c] = obs.get(c, []) + [(x,y)]
-            outx[y].append(c)
+                outx[y].append("📡")
+            else:
+                outx[y].append('⏹️')
 seen = set()
 nodes = set()
 for k, antennae in obs.items():
@@ -27,17 +29,18 @@ for k, antennae in obs.items():
             seen.add(a_id)
             seen.add(a_id_x)
             print(seen)
+
             delta = (ant_2[0] - ant[0], ant_2[1] - ant[1])
             if is_in_bounds(ant[0] - delta[0], ant[1] - delta[1]):
                 nodes.add((ant[0] - delta[0], ant[1] - delta[1]))
                 print(ant[0] - delta[0], ant[1] - delta[1])
                 print(outx[ant[1] - delta[1]][ant[0] - delta[0]])
-                outx[ant[1] - delta[1]][ant[0] - delta[0]] = "#"
+                outx[ant[1] - delta[1]][ant[0] - delta[0]] = "🎄"
             if is_in_bounds(ant_2[0] + delta[0], ant_2[1] + delta[1]):
                 nodes.add((ant_2[0] + delta[0], ant_2[1] + delta[1]))
                 print(ant_2[0] + delta[0], ant_2[1] + delta[1])
                 print(outx[ant_2[1] + delta[1]][ant_2[0] + delta[0]])
-                outx[ant_2[1] + delta[1]][ant_2[0] + delta[0]] = "#"
+                outx[ant_2[1] + delta[1]][ant_2[0] + delta[0]] = "🎄"
 
 for y in range(n):
     print()

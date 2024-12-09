@@ -12,5 +12,3 @@ with open("inputs/2.txt", "r") as file:
         if not violated:
             total += 1
 print(total)
-
-

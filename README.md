@@ -29,3 +29,14 @@ O(n)..
 ### Day 4
 
 O(n*m)..
+
+### Day 5
+Yet to verfiy, part 1 is O(n^2), part2 O(n^3)
+Could be optimized to (presumably) O(n), O(n^2) as the whole list is checked for each item, where a set could be used
+for 
+
+### Day 6
+Part 1: O(n*m)
+Part 2: ..
+
+
