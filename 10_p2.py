@@ -1,5 +1,3 @@
-from pydoc import visiblename
-
 m = n = 0
 map = []
 
