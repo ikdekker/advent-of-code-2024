@@ -1,4 +1,3 @@
-# Reading the input map from the file
 with open("inputs/12_1.txt") as file:
     garden = [list(line.strip()) for line in file]
 n = len(garden)
@@ -51,7 +50,6 @@ for plant_key, patch in A.items():
         plant_sums[(plant_type,patch_root)] = (0, 0)
     plant_sums[(plant_key, patch_root)] = sum_tuples(patch.values())
 
-# Calculate prices and sum them
 combined_prices = sum(tuple_to_price(total) for total in plant_sums.values())
 
 print(combined_prices)

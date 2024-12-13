@@ -1,4 +1,3 @@
-# Reading the input map from the file
 with open("inputs/12_1.txt") as file:
     garden = [list(line.strip()) for line in file]
 n = len(garden[0]) if garden else 0
