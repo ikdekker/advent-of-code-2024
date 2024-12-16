@@ -27,19 +27,19 @@ def print_wh_entry(pos,bot,boxes,boxes_wide, walls, emoji):
     if pos == bot:
         return "🤖" if emoji else '@'
     elif pos in boxes:
-        return '📦📦' if emoji else '['
+        return '🌔🌖' if emoji else '['
     elif pos in boxes_wide:
         return '' if emoji else ']'
     elif pos in walls:
         return '🧱' if emoji else '#'
-    return "🟩" if emoji else '.'
+    return "⬛" if emoji else '.'
 
 def print_wh(warehouse_map, boxes, walls, bot):
     for y, row in enumerate(warehouse_map):
         row_output = []
         for x, char in enumerate(row):
             pos = (x * 2, y)
-            use_emoji = len(warehouse_map[0]) < 40
+            use_emoji = len(warehouse_map[0]) < 40 or True
             c = print_wh_entry(pos,bot,boxes,boxes_wide, walls, use_emoji)
             row_output.append(c)
             pos = (x * 2 + 1, y)
@@ -123,14 +123,14 @@ def calculate_gps_coordinates(box):
     return gps_coordinate
 
 mc=0
-visualize = False
+visualize = True
 for movement_line in movements:
     for m in movement_line:
         bot = move_or_push(boxes, boxes_wide, walls, bot, m, dirs)
         if visualize:
-            print("NEXT: " + dirs_txt[dirs_chars.index(m)] + " SUM: " + str(
-                sum(calculate_gps_coordinates(box) for box in boxes)))
+            # print("NEXT: " + dirs_txt[dirs_chars.index(m)] + " SUM: " + str(
+            #     sum(calculate_gps_coordinates(box) for box in boxes)))
             print_wh(warehouse_map, boxes, walls, bot)
-            sleep(0.0)
+            sleep(0.1)
         mc+=1
 print(sum(calculate_gps_coordinates(box) for box in boxes))
